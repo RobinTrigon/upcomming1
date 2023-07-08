@@ -4,16 +4,19 @@ writen by: RobinTrigon | 3rr0r-404
 ### Brutforce sobdomain via ffuf
 ```
 subs="/home/aruu/Desktop/ath3na/sub.txt" ; act="https://FUZZ.yahoo.com" ; ffuf -w $subs -v -t 300 -timeout 15  -u "$act" -o lol | grep "URL" | tee -a result.txt ; rm lol
+
 ```
 ### Remove scheme from  list of urls
 ```
 for url in $(cat lis_of_urls.txt);do
  echo "$url"|awk -F[/:] '{print $4}'
 done
+
 ```
 ### collect all subdomains ip from target website
 ```
 assetfinder --subs-only "testfire.net" |dig| grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
+
 ```
 ### subdomain brutforce via host command
 ```
